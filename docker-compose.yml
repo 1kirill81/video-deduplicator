@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  video-deduplicator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+    working_dir: /app
+    stdin_open: true
+    tty: true
